@@ -22,7 +22,7 @@
         "description": "\r\nHigh Trust Messaging for the Enterprise\r\n\r\nMattermost is a flexible, open source messaging platform that meets even the most demanding privacy and security standards\r\n"
       }
     },
-    "timestamp": "2019-05-30T10:33:45+10:00"
+    "timestamp": "2019-05-30T12:04:23+10:00"
   },
   "software": {
     "base": {
@@ -83,6 +83,19 @@
           "service_name": "config",
           "volume_src": "",
           "engine_path": "",
+          "permissions": "rw",
+          "user": "_Engines_Builder(data_uid)",
+          "group": "_Engines_Builder(data_gid)",
+          "fw_user": "_Engines_Builder(cont_user_id)"
+        }
+      },
+      {
+        "publisher_namespace": "EnginesSystem",
+        "type_path": "filesystem/local/filesystem",
+        "variables": {
+          "service_name": "logs",
+          "volume_src": "",
+          "engine_path": "/home/app/logs",
           "permissions": "rw",
           "user": "_Engines_Builder(data_uid)",
           "group": "_Engines_Builder(data_gid)",
