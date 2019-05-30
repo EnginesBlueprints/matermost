@@ -22,7 +22,7 @@
         "description": "\r\nHigh Trust Messaging for the Enterprise\r\n\r\nMattermost is a flexible, open source messaging platform that meets even the most demanding privacy and security standards\r\n"
       }
     },
-    "timestamp": "2019-05-31T09:33:01+10:00"
+    "timestamp": "2019-05-31T09:39:28+10:00"
   },
   "software": {
     "base": {
@@ -142,7 +142,6 @@
           {
             "name": "enabled",
             "value": "false",
-            "mandatory": true,
             "input": {
               "type": "checkbox_boolean"
             }
