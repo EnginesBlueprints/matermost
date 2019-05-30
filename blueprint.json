@@ -22,7 +22,7 @@
         "description": "\r\nHigh Trust Messaging for the Enterprise\r\n\r\nMattermost is a flexible, open source messaging platform that meets even the most demanding privacy and security standards\r\n"
       }
     },
-    "timestamp": "2019-05-30T16:38:59+10:00"
+    "timestamp": "2019-05-30T16:39:34+10:00"
   },
   "software": {
     "base": {
@@ -37,7 +37,7 @@
     },
     "scripts": {
       "start": {
-        "content": "#!/bin/sh\r\nPID_FILE=/home/engines/run/mattermost.pid\r\nexport PID_FILE\r\n. /home/engines/functions/trap.sh\r\n\r\ncd /home/app/\r\nbin/mattermost -c /home/app/config/config.json server&\r\necho -n $! > $PID_FILE\r\nstartup_complete\r\n\r\n\r\nsleep 3600 &\r\necho -n \" $! \" >> $PID_FILE\r\nwait\r\nshutdown_complete\r\n"
+        "content": "#!/bin/sh\r\nPID_FILE=/home/engines/run/mattermost.pid\r\nexport PID_FILE\r\n. /home/engines/functions/trap.sh\r\n\r\ncd /home/app/\r\nbin/mattermost -c /home/app/config/config.json server&\r\necho $! > $PID_FILE\r\nstartup_complete\r\n\r\n\r\nsleep 3600 &\r\necho $! >> $PID_FILE\r\nwait\r\nshutdown_complete\r\n"
       },
       "first_run": {
         "content": "#!/bin/sh\r\ncp /home/engines/templates/config/config.json /home/config/config.json\r\n"
