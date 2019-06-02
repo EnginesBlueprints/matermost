@@ -22,7 +22,7 @@
         "description": "\r\nHigh Trust Messaging for the Enterprise\r\n\r\nMattermost is a flexible, open source messaging platform that meets even the most demanding privacy and security standards\r\n"
       }
     },
-    "timestamp": "2019-05-31T09:40:17+10:00"
+    "timestamp": "2019-06-02T10:52:00+10:00"
   },
   "software": {
     "base": {
@@ -165,6 +165,21 @@
         ],
         "script": {
           "content": "#!/bin/sh\r\ncd /home/app/\r\nbin/mattermost -c /home/app/config/config.json config set LdapSettings.Enable $enabled\r\n"
+        }
+      },
+      {
+        "name": "enable_plugin_upload",
+        "return_type": "plain_text",
+        "variables": [
+          {
+            "name": "enable",
+            "input": {
+              "type": "checkboxes"
+            }
+          }
+        ],
+        "script": {
+          "content": "#!/bin/sh\r\ncd /home/app/\r\nbin/mattermost -c /home/app/config/config.json config set PluginSettings.EnableUploads $enabled"
         }
       }
     ]
